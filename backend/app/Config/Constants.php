@@ -42,6 +42,24 @@ defined('MONTH')  || define('MONTH', 2592000);
 defined('YEAR')   || define('YEAR', 31536000);
 defined('DECADE') || define('DECADE', 315360000);
 
+define('_EMAIL', 'email');
+define('_FULL_NAME', 'full_name');
+define('_PHONE_NO', 'phone_no.');
+define('_DATE', 'date');
+define('_TIME', 'time');
+define('_HOST_NAME', 'host_name');
+define('_PASSWORD', 'password');
+define('_ROLE', 'role.');
+define('_ADDRESS', 'address');
+define('_ORGANIZATION', 'organization');
+define('_DESIGNATION', 'designation');
+
+define('_RETURN_TYPE', 'array');
+define('_RESPONSE', 'response');
+define('_SUCCESS_', 'success.');
+define('_FAILED_', 'failed.');
+define('_MESSAGE_', 'message');
+
 /*
  | --------------------------------------------------------------------------
  | Exit Status Codes

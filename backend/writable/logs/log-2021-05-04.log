@@ -1,0 +1,6 @@
+CRITICAL - 2021-05-04 00:59:53 --> Cannot declare class App\Database\Migrations\Add_Users, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-05-04 01:01:02 --> Cannot declare class App\Database\Migrations\Add_Users, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
