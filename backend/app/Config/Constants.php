@@ -42,17 +42,38 @@ defined('MONTH')  || define('MONTH', 2592000);
 defined('YEAR')   || define('YEAR', 31536000);
 defined('DECADE') || define('DECADE', 315360000);
 
+define('_USERS_TABLE', 'Users');
+define('_USERS_ADDITIONAL_DETAILS_TABLE', 'Users_Additional_Details');
+define('_ADDRESSES_TABLE', 'Addresses');
+define('_SLOTS_TABLE', 'Slots');
+
+define('_ID', 'email');
+define('_STATUS', 'status');
+define('_CREATED_AT', 'created_at');
+define('_UPDATED_AT', 'updated_at');
+
 define('_EMAIL', 'email');
-define('_FULL_NAME', 'full_name');
-define('_PHONE_NO', 'phone_no.');
-define('_DATE', 'date');
-define('_TIME', 'time');
-define('_HOST_NAME', 'host_name');
 define('_PASSWORD', 'password');
-define('_ROLE', 'role.');
-define('_ADDRESS', 'address');
-define('_ORGANIZATION', 'organization');
+define('_ROLE', 'role');
+define('_USER_ADDITONAL_DETAILS_ID', 'user_additional_details_id');
+
+define('_FULL_NAME', 'full_name');
 define('_DESIGNATION', 'designation');
+define('_ORGANIZATION', 'organization');
+define('_PHONE_NO', 'phone_no');
+define('_ADDRESS_ID', 'address_id');
+
+define('_ADDRESS_LINE_1', 'address_line_1');
+define('_ADDRESS_LINE_2', 'address_line_2');
+define('_ADDRESS_LINE_3', 'address_line_3');
+define('_CITY', 'city');
+define('_STATE', 'state');
+define('_COUNTRY', 'country');
+define('_PINCODE', 'pincode');
+
+define('_VISITOR_ID', 'visitor_id');
+define('_HOST_ID', 'host_id');
+define('_MEETING_AT', 'meeting_at');
 
 define('_RETURN_TYPE', 'array');
 define('_RESPONSE', 'response');
