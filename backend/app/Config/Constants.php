@@ -46,6 +46,7 @@ define('_USERS_TABLE', 'Users');
 define('_USERS_ADDITIONAL_DETAILS_TABLE', 'Users_Additional_Details');
 define('_ADDRESSES_TABLE', 'Addresses');
 define('_SLOTS_TABLE', 'Slots');
+define('_AUTHENTICATION_TOKENS_TABLE', 'AuthenticationTokens');
 
 define('_ID', 'id');
 define('_STATUS', 'status');
@@ -74,6 +75,9 @@ define('_PINCODE', 'pincode');
 define('_VISITOR_ID', 'visitor_id');
 define('_HOST_ID', 'host_id');
 define('_MEETING_AT', 'meeting_at');
+
+define('_USER_ID', 'user_id');
+define('_TOKEN', 'token');
 
 define('_USER', 'user');
 define('_USER_ADDITIONAL_DETAILS', 'user_additional_details');

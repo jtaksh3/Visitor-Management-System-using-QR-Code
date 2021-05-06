@@ -17,8 +17,8 @@ class Add_Authentication_Tokens extends \CodeIgniter\Database\Migration {
         'null'           => true,
       ],
       'token'       => [
-        'type'           => 'INT',
-        'constraint'     => '9',
+        'type'           => 'VARCHAR',
+        'constraint'     => '100',
         'null'           => true,
       ],
       'created_at' => [

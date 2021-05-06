@@ -7,6 +7,7 @@ class UsersModelLibrary
   protected $usersModelObj = null;
   private $usersAdditionalDetailsModelLibraryObj = null;
   private $addressModelLibraryObj = null;
+  private $authenticationTokensModelObj = null;
   private $responseObj = null;
 
   public function __construct()
@@ -14,6 +15,7 @@ class UsersModelLibrary
     $this->usersModelObj = new \App\Models\UsersModel();
     $this->usersAdditionalDetailsModelLibraryObj = new UsersAdditionalDetailsModelLibrary();
     $this->addressModelLibraryObj = new AddressesModelLibrary();
+    $this->authenticationTokensModelObj = new AuthenticationTokensModelLibrary();
     $this->responseObj = new CustomResponsesLibrary();
     helper('custom_response');
   }
@@ -50,6 +52,12 @@ class UsersModelLibrary
     $insert[_STATUS] = _ACTIVE;
     $user_id = $this->usersModelObj->insert($insert);
 
+    $auth = [
+      _USER_ID => $user_id,
+      _TOKEN => $insert[_EMAIL]
+    ];
+    $this->authenticationTokensModelObj->insertionAuthenticationToken($auth);
+    
     $user = $this->getUser($user_id);
     unset($user[_PASSWORD]);
     $user[_USER_ADDITIONAL_DETAILS] = $this->usersAdditionalDetailsModelLibraryObj->getUserAdditionalDetails(($user[_USER_ADDITIONAL_DETAILS_ID]));
