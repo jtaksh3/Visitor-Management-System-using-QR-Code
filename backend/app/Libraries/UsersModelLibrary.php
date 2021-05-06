@@ -46,10 +46,12 @@ class UsersModelLibrary
 
   public function insertionUser($insert)
   {
+    $insert[_PASSWORD] = password_hash($insert[_PASSWORD], PASSWORD_BCRYPT);
     $insert[_STATUS] = _ACTIVE;
     $user_id = $this->usersModelObj->insert($insert);
 
     $user = $this->getUser($user_id);
+    unset($user[_PASSWORD]);
     $user[_USER_ADDITIONAL_DETAILS] = $this->usersAdditionalDetailsModelLibraryObj->getUserAdditionalDetails(($user[_USER_ADDITIONAL_DETAILS_ID]));
     $user[_USER_ADDITIONAL_DETAILS][_ADDRESS] = $this->addressModelLibraryObj->getAddress($user[_USER_ADDITIONAL_DETAILS][_ADDRESS_ID]);
     $data = [
