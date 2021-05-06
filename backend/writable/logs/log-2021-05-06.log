@@ -1,0 +1,32 @@
+CRITICAL - 2021-05-06 04:35:03 --> Trying to access array offset on value of type bool
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(60): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/opt/lampp/htdo...', 60, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(37): App\Libraries\UsersModelLibrary->insertionUser(Array)
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->create()
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-05-06 04:38:27 --> Trying to access array offset on value of type bool
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(61): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/opt/lampp/htdo...', 61, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(37): App\Libraries\UsersModelLibrary->insertionUser(Array)
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->create()
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-05-06 04:47:00 --> Undefined variable: user
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(60): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 60, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(37): App\Libraries\UsersModelLibrary->insertionUser(Array)
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->create()
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-05-06 04:48:31 --> Undefined index: address_id
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(61): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 61, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(37): App\Libraries\UsersModelLibrary->insertionUser(Array)
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->create()
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}

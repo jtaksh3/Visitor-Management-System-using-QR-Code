@@ -47,7 +47,7 @@ define('_USERS_ADDITIONAL_DETAILS_TABLE', 'Users_Additional_Details');
 define('_ADDRESSES_TABLE', 'Addresses');
 define('_SLOTS_TABLE', 'Slots');
 
-define('_ID', 'email');
+define('_ID', 'id');
 define('_STATUS', 'status');
 define('_CREATED_AT', 'created_at');
 define('_UPDATED_AT', 'updated_at');
@@ -55,7 +55,7 @@ define('_UPDATED_AT', 'updated_at');
 define('_EMAIL', 'email');
 define('_PASSWORD', 'password');
 define('_ROLE', 'role');
-define('_USER_ADDITONAL_DETAILS_ID', 'user_additional_details_id');
+define('_USER_ADDITIONAL_DETAILS_ID', 'user_additional_details_id');
 
 define('_FULL_NAME', 'full_name');
 define('_DESIGNATION', 'designation');
@@ -75,11 +75,26 @@ define('_VISITOR_ID', 'visitor_id');
 define('_HOST_ID', 'host_id');
 define('_MEETING_AT', 'meeting_at');
 
+define('_USER', 'user');
+define('_USER_ADDITIONAL_DETAILS', 'user_additional_details');
+define('_ADDRESS', 'address');
+
+define('_ACTIVE', 'active');
+define('_NOT_ACTIVE', 'not_active');
 define('_RETURN_TYPE', 'array');
 define('_RESPONSE', 'response');
 define('_SUCCESS_', 'success.');
 define('_FAILED_', 'failed.');
 define('_MESSAGE_', 'message');
+define('_DATA', 'data');
+define('_CONTENT_TYPE', 'application/json');
+define('_NO_INPUTS_', 'no inputs entered');
+define('_MISSING_FIELDS_', 'one or more fields are missing');
+define('_ALREADY_EXISTS_', ' already exists');
+
+define('_CREATED_SUCCESS_', ' created successfully.');
+define('_DELETED_SUCCESS_', ' deleted successfully.');
+define('_UPDATED_SUCCESS_', ' updated successfully.');
 
 /*
  | --------------------------------------------------------------------------

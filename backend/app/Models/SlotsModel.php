@@ -4,7 +4,7 @@ use CodeIgniter\Model;
  
 class SlotsModel extends Model
 {
-	protected $table      = _USERS_TABLE;
+	protected $table      = _SLOTS_TABLE;
     protected $primaryKey = _ID;
     protected $returnType = _RETURN_TYPE;
     protected $allowedFields = [_VISITOR_ID, _HOST_ID, _MEETING_AT, _STATUS];
