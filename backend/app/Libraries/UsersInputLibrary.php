@@ -77,20 +77,18 @@ class UsersInputLibrary
     return custom_response_process(true, $data, null);
   }
 
-  //   public function getLoginInput($input, $value)
-  //   {
-  //     if($this->validationObj->isInputEmpty($input, $value))
-  //     {
-  //       return custom_response_process(false, null, $this->responseObj->failResponse(_NO_INPUTS_));
-  //     }
-  //     $input = $input[$value];
-  //     $username = $this->validationObj->getInput($input, _EMAIL);
-  //     $password = $this->validationObj->getInput($input, _PASSWORD);
-  //     if(!$username || !$password)
-  //     {
-  //       return custom_response_process(false, null, $this->responseObj->failResponse(_MISSING_FIELDS_, $input));
-  //     }
-  //     return custom_response_process(true, [_USERNAME => $username, _PASSWORD => $password], null);
-  //   }
-
+  public function getLoginInput()
+  {
+    $input = $this->dataObj->getInputData();
+    if ($this->validationObj->isInputEmpty($input, _LOGIN_CREDENTIALS)) {
+      return custom_response_process(false, null, $this->responseObj->failResponse(_NO_INPUTS_));
+    }
+    $input = $input[_LOGIN_CREDENTIALS];
+    $email = $this->validationObj->getInput($input, _EMAIL);
+    $password = $this->validationObj->getInput($input, _PASSWORD);
+    if (!$email || !$password) {
+      return custom_response_process(false, null, $this->responseObj->failResponse(_MISSING_FIELDS_, $input));
+    }
+    return custom_response_process(true, [_EMAIL => $email, _PASSWORD => $password], null);
+  }
 }

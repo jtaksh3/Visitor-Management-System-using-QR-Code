@@ -40,4 +40,24 @@ class User extends \CodeIgniter\RESTful\ResourceController
 
     return $this->dataObj->getResponse($get);
   }
+
+  public function login()
+  {
+    $get = $this->usersInputObj->getLoginInput();
+    if(!$this->dataObj->getStatus($get))
+    {
+      return $this->dataObj->getResponse($get);
+    }
+    $email = $this->dataObj->getData($get, _EMAIL);
+    $password = $this->dataObj->getData($get, _PASSWORD);
+    $get = $this->userModelLibraryObj->isCorrectCredentials($email, $password);
+    if(!$this->dataObj->getStatus($get))
+    {
+      return $this->dataObj->getResponse($get);
+    }
+    $user_id = $this->dataObj->getData($get, _ID);
+    $get = $this->userModelLibraryObj->loginUser($user_id);
+
+    return $this->dataObj->getResponse($get);
+  }
 }

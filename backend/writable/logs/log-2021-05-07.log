@@ -1,0 +1,15 @@
+CRITICAL - 2021-05-07 02:23:38 --> Undefined property: App\Controllers\User::$userObj
+#0 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(53): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 53, Array)
+#1 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->login()
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-07 02:24:10 --> Undefined property: App\Libraries\UsersModelLibrary::$password
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(77): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 77, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(53): App\Libraries\UsersModelLibrary->isCorrectCredentials('aaaaaaa', 'sfdasff')
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->login()
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
