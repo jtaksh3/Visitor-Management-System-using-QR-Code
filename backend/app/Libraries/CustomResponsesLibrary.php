@@ -39,9 +39,14 @@ class CustomResponsesLibrary
     return $this->respondDeleted(custom_response_output($message, $data));
   }
 
-  public function AlreadyExistsResponse($message)
+  public function alreadyExistsResponse($message)
   {
     return $this->failResourceExists($message);
+  }
+
+  public function notFoundResponse($message)
+  {
+    return $this->failNotFound($message);
   }
 
 }

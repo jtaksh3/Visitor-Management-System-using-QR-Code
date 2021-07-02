@@ -83,6 +83,9 @@ define('_USER', 'user');
 define('_USER_ADDITIONAL_DETAILS', 'user_additional_details');
 define('_ADDRESS', 'address');
 define('_LOGIN_CREDENTIALS', 'login_credentials');
+define('_AUTHORIZATION', 'Authorization');
+define('_ADMIN', 'admin');
+
 
 define('_ACTIVE', 'active');
 define('_NOT_ACTIVE', 'not_active');
@@ -97,6 +100,9 @@ define('_NO_INPUTS_', 'no inputs entered');
 define('_MISSING_FIELDS_', 'one or more fields are missing');
 define('_ALREADY_EXISTS_', ' already exists');
 define('_INCORRECT_CREDENTIALS_', 'invalid credentials entered');
+define('_UNAUTHORIZED_', 'unauthorized user');
+define('_NOT_EXISTS_', ' not exists.');
+
 
 define('_CREATED_SUCCESS_', ' created successfully.');
 define('_DELETED_SUCCESS_', ' deleted successfully.');

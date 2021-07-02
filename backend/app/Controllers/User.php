@@ -60,4 +60,19 @@ class User extends \CodeIgniter\RESTful\ResourceController
 
     return $this->dataObj->getResponse($get);
   }
+
+  public function show($user_id = null)
+  {
+    $token = $this->request->getHeaderLine(_AUTHORIZATION);
+    $get1 = $this->userModelLibraryObj->isAuthorizedAdmin($token);
+    $get2 = $this->userModelLibraryObj->isAuthorizedUser($user_id, $token);
+    if($this->dataObj->getStatus($get1) || $this->dataObj->getStatus($get2))
+    {
+      $get = $this->userModelLibraryObj->getIndividualUser($user_id);
+
+      return $this->dataObj->getResponse($get);
+    }
+
+    return $this->dataObj->getResponse($get1);
+  }
 }

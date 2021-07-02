@@ -1,0 +1,8 @@
+CRITICAL - 2021-06-24 13:35:57 --> Trying to access array offset on value of type bool
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(78): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/opt/lampp/htdo...', 78, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(71): App\Libraries\UsersModelLibrary->getIndividualUser('2')
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->show('2')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}

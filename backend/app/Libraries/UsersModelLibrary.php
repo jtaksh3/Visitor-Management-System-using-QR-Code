@@ -20,11 +20,34 @@ class UsersModelLibrary
     helper('custom_response');
   }
 
+  public function isAuthorizedAdmin($token)
+  {
+    $auth = $this->authenticationTokensModelObj->getAuthenticationTokenbyToken($token);
+    $user = $this->getUser($auth[_USER_ID]);
+
+    if (empty($auth) || empty($token) || $user[_ROLE] != _ADMIN) {
+      return custom_response_process(false, null, $this->responseObj->unauthorizedResponse(_UNAUTHORIZED_));
+    }
+
+    return custom_response_process(true, null, null);
+  }
+
+  public function isAuthorizedUser($user_id, $token)
+  {
+    $auth = $this->authenticationTokensModelObj->getAuthenticationTokenbyToken($token);
+
+    if (empty($user_id_ip) || empty($token) || $user_id != $auth[_USER_ID]) {
+      return custom_response_process(false, null, $this->responseObj->unauthorizedResponse(_UNAUTHORIZED_));
+    }
+
+    return custom_response_process(true, null, null);
+  }
+
   public function isUserAlreadyExists($email)
   {
     $userRecord = $this->usersModelObj->where(_EMAIL, $email)->find();
     if (!empty($userRecord)) {
-      return custom_response_process(true, null, $this->responseObj->AlreadyExistsResponse(_USER . _ALREADY_EXISTS_));
+      return custom_response_process(true, null, $this->responseObj->alreadyExistsResponse(_USER . _ALREADY_EXISTS_));
     }
     return custom_response_process(false, null, null);
   }
@@ -49,6 +72,23 @@ class UsersModelLibrary
     return $user;
   }
 
+  public function getIndividualUser($user_id)
+  {
+    $user = $this->getUser($user_id);
+    if ($user)
+    {
+      $user[_USER_ADDITIONAL_DETAILS] = $this->usersAdditionalDetailsModelLibraryObj->getUserAdditionalDetails(($user[_USER_ADDITIONAL_DETAILS_ID]));
+      $user[_USER_ADDITIONAL_DETAILS][_ADDRESS] = $this->addressModelLibraryObj->getAddress($user[_USER_ADDITIONAL_DETAILS][_ADDRESS_ID]);
+      $data = [
+        _USER => $user
+      ];
+
+      return custom_response_process(true, $data, $this->responseObj->successResponse(_USER_ID . ' ' . $user_id, $data));
+    }
+
+    return custom_response_process(false, null, $this->responseObj->notFoundResponse(_USER . _NOT_EXISTS_));
+  }
+
   public function insertionUser($insert)
   {
     $insert[_PASSWORD] = password_hash($insert[_PASSWORD], PASSWORD_BCRYPT);
@@ -61,12 +101,8 @@ class UsersModelLibrary
     ];
     $this->authenticationTokensModelObj->insertionAuthenticationToken($auth);
 
-    $user = $this->getUser($user_id);
-    $user[_USER_ADDITIONAL_DETAILS] = $this->usersAdditionalDetailsModelLibraryObj->getUserAdditionalDetails(($user[_USER_ADDITIONAL_DETAILS_ID]));
-    $user[_USER_ADDITIONAL_DETAILS][_ADDRESS] = $this->addressModelLibraryObj->getAddress($user[_USER_ADDITIONAL_DETAILS][_ADDRESS_ID]);
-    $data = [
-      _USER => $user
-    ];
+    $get = $this->getIndividualUser($user_id);
+    $data = $get[_DATA];
 
     return custom_response_process(true, $data, $this->responseObj->createdResponse(_USER . _CREATED_SUCCESS_, $data));
   }
@@ -74,8 +110,7 @@ class UsersModelLibrary
   public function isCorrectCredentials($email, $password)
   {
     $user = $this->usersModelObj->select([_ID, _PASSWORD])->where(_STATUS, _ACTIVE)->where(_EMAIL, $email)->first();
-    if(empty($user) || !password_verify($password, $user[_PASSWORD]))
-    {
+    if (empty($user) || !password_verify($password, $user[_PASSWORD])) {
       return custom_response_process(false, null, $this->responseObj->unauthorizedResponse(_INCORRECT_CREDENTIALS_));
     }
     $data = [
@@ -86,15 +121,10 @@ class UsersModelLibrary
 
   public function loginUser($user_id)
   {
-    $user = $this->getUser($user_id);
-    $user[_USER_ADDITIONAL_DETAILS] = $this->usersAdditionalDetailsModelLibraryObj->getUserAdditionalDetails(($user[_USER_ADDITIONAL_DETAILS_ID]));
-    $user[_USER_ADDITIONAL_DETAILS][_ADDRESS] = $this->addressModelLibraryObj->getAddress($user[_USER_ADDITIONAL_DETAILS][_ADDRESS_ID]);
-    $user[_TOKEN] = $this->authenticationTokensModelObj->getAuthenticationToken($user_id, $user[_EMAIL]);
-    $data = [
-      _USER => $user
-    ];
+    $get = $this->getIndividualUser($user_id);
+    $data = $get[_DATA];
+    $data[_USER][_TOKEN] = $this->authenticationTokensModelObj->getAuthenticationTokenbyUserId($user_id, $data[_USER][_EMAIL]);
 
     return custom_response_process(true, $data, $this->responseObj->successResponse(_LOGIN_SUCCESS_, $data));
   }
 }
-
