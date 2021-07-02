@@ -89,6 +89,23 @@ class UsersModelLibrary
     return custom_response_process(false, null, $this->responseObj->notFoundResponse(_USER . _NOT_EXISTS_));
   }
 
+  public function getAllUsers()
+  {
+    $users = $this->usersModelObj->where(_STATUS, _ACTIVE)->findAll();
+    $i = 0;
+    while(!empty($users[$i]))
+    {
+      unset($users[$i][_PASSWORD]);
+      $users[$i][_USER_ADDITIONAL_DETAILS] = $this->usersAdditionalDetailsModelLibraryObj->getUserAdditionalDetails(($users[$i][_USER_ADDITIONAL_DETAILS_ID]));
+      $users[$i][_USER_ADDITIONAL_DETAILS][_ADDRESS] = $this->addressModelLibraryObj->getAddress($users[$i][_USER_ADDITIONAL_DETAILS][_ADDRESS_ID]);
+      $i++;
+    }
+    $data = [
+      _USERS => $users
+    ];
+    return custom_response_process(true, $data, $this->responseObj->successResponse(_USERS, $data));
+  }
+
   public function insertionUser($insert)
   {
     $insert[_PASSWORD] = password_hash($insert[_PASSWORD], PASSWORD_BCRYPT);

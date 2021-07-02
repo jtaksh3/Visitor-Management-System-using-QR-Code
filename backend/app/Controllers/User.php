@@ -75,4 +75,17 @@ class User extends \CodeIgniter\RESTful\ResourceController
 
     return $this->dataObj->getResponse($get1);
   }
+
+  public function index()
+  {
+    $token = $this->request->getHeaderLine(_AUTHORIZATION);
+    $get = $this->userModelLibraryObj->isAuthorizedAdmin($token);
+    if(!$this->dataObj->getStatus($get))
+    {
+      return $this->dataObj->getResponse($get);
+    }
+    $get = $this->userModelLibraryObj->getAllUsers();
+
+    return $this->dataObj->getResponse($get);
+  }
 }

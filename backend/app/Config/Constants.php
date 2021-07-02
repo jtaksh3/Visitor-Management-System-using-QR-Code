@@ -80,6 +80,7 @@ define('_USER_ID', 'user_id');
 define('_TOKEN', 'token');
 
 define('_USER', 'user');
+define('_USERS', 'users');
 define('_USER_ADDITIONAL_DETAILS', 'user_additional_details');
 define('_ADDRESS', 'address');
 define('_LOGIN_CREDENTIALS', 'login_credentials');

@@ -1,0 +1,23 @@
+CRITICAL - 2021-07-02 22:12:17 --> Undefined property: App\Controllers\User::$userObj
+#0 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(87): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 87, Array)
+#1 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->index()
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-07-02 22:12:37 --> Undefined index: user_additional_details_id
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 99, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(87): App\Libraries\UsersModelLibrary->getAllUsers()
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->index()
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-07-02 22:13:23 --> Undefined index: user_additional_details_id
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 99, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(87): App\Libraries\UsersModelLibrary->getAllUsers()
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->index()
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
