@@ -32,11 +32,22 @@ class UsersModelLibrary
     return custom_response_process(true, null, null);
   }
 
+  public function isUserAuthorized($token)
+  {
+    $auth = $this->authenticationTokensModelObj->getAuthenticationTokenbyToken($token);
+
+    if (empty($auth) || empty($token)) {
+      return custom_response_process(false, null, $this->responseObj->unauthorizedResponse(_UNAUTHORIZED_));
+    }
+
+    return custom_response_process(true, null, null);
+  }
+
   public function isAuthorizedUser($user_id, $token)
   {
     $auth = $this->authenticationTokensModelObj->getAuthenticationTokenbyToken($token);
 
-    if (empty($user_id_ip) || empty($token) || $user_id != $auth[_USER_ID]) {
+    if (empty($user_id) || empty($token) || $user_id != $auth[_USER_ID]) {
       return custom_response_process(false, null, $this->responseObj->unauthorizedResponse(_UNAUTHORIZED_));
     }
 

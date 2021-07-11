@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->post('user/login', 'User::login');
 $routes->resource('user');
+$routes->resource('slot');
 
 /*
  * --------------------------------------------------------------------

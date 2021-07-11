@@ -72,6 +72,7 @@ define('_STATE', 'state');
 define('_COUNTRY', 'country');
 define('_PINCODE', 'pincode');
 
+define('_SLOT', 'slot');
 define('_VISITOR_ID', 'visitor_id');
 define('_HOST_ID', 'host_id');
 define('_MEETING_AT', 'meeting_at');
@@ -86,6 +87,8 @@ define('_ADDRESS', 'address');
 define('_LOGIN_CREDENTIALS', 'login_credentials');
 define('_AUTHORIZATION', 'Authorization');
 define('_ADMIN', 'admin');
+define('_VISITOR_STATUS', 'visitor_status');
+define('_HOST_STATUS', 'host_status');
 
 
 define('_ACTIVE', 'active');

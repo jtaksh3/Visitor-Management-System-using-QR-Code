@@ -1,0 +1,23 @@
+CRITICAL - 2021-07-11 21:49:46 --> Undefined property: App\Controllers\Slot::$usersInputObj
+#0 /opt/lampp/htdocs/vms/backend/app/Controllers/Slot.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 29, Array)
+#1 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\Slot->create()
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Slot))
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-07-11 21:50:13 --> Undefined property: App\Libraries\SlotsModelLibrary::$usersModelObj
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/SlotsModelLibrary.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 33, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/Slot.php(35): App\Libraries\SlotsModelLibrary->insertionSlot(Array)
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\Slot->create()
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Slot))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-07-11 21:51:07 --> Undefined index: data
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/SlotsModelLibrary.php(36): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 36, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/Slot.php(35): App\Libraries\SlotsModelLibrary->insertionSlot(Array)
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\Slot->create()
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Slot))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
