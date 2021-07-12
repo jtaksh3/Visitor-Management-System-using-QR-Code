@@ -23,9 +23,8 @@ class UsersModelLibrary
   public function isAuthorizedAdmin($token)
   {
     $auth = $this->authenticationTokensModelObj->getAuthenticationTokenbyToken($token);
-    $user = $this->getUser($auth[_USER_ID]);
 
-    if (empty($auth) || empty($token) || $user[_ROLE] != _ADMIN) {
+    if (empty($auth) || empty($token) || $this->getUser($auth[_USER_ID])[_ROLE] != _ADMIN) {
       return custom_response_process(false, null, $this->responseObj->unauthorizedResponse(_UNAUTHORIZED_));
     }
 
@@ -47,7 +46,7 @@ class UsersModelLibrary
   {
     $auth = $this->authenticationTokensModelObj->getAuthenticationTokenbyToken($token);
 
-    if (empty($user_id) || empty($token) || $user_id != $auth[_USER_ID]) {
+    if (empty($auth) || empty($user_id) || empty($token) || $user_id != $auth[_USER_ID]) {
       return custom_response_process(false, null, $this->responseObj->unauthorizedResponse(_UNAUTHORIZED_));
     }
 

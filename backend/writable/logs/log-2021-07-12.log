@@ -1,0 +1,64 @@
+CRITICAL - 2021-07-12 15:38:45 --> Trying to access array offset on value of type null
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/opt/lampp/htdo...', 26, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(67): App\Libraries\UsersModelLibrary->isAuthorizedAdmin('aa6b3a499bac5af...')
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->show('1')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-07-12 15:38:52 --> Trying to access array offset on value of type null
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/opt/lampp/htdo...', 26, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(67): App\Libraries\UsersModelLibrary->isAuthorizedAdmin('aa6b3a499bac5af...')
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->show('2')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-07-12 15:43:29 --> Trying to access array offset on value of type null
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/opt/lampp/htdo...', 26, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(67): App\Libraries\UsersModelLibrary->isAuthorizedAdmin('2', 'aa6b3a499bac5af...')
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->show('2')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-07-12 15:43:37 --> Trying to access array offset on value of type null
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/opt/lampp/htdo...', 26, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(67): App\Libraries\UsersModelLibrary->isAuthorizedAdmin('1', 'aa6b3a499bac5af...')
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->show('1')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-07-12 15:44:01 --> Trying to access array offset on value of type null
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/opt/lampp/htdo...', 26, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(67): App\Libraries\UsersModelLibrary->isAuthorizedAdmin(NULL, 'aa6b3a499bac5af...')
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->show('1')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-07-12 15:44:45 --> Trying to access array offset on value of type null
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/opt/lampp/htdo...', 26, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(67): App\Libraries\UsersModelLibrary->isAuthorizedAdmin('aa6b3a499bac5af...')
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->show('1')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-07-12 15:48:07 --> Trying to access array offset on value of type null
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/opt/lampp/htdo...', 49, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(68): App\Libraries\UsersModelLibrary->isAuthorizedUser('1', 'aa6b3a499bac5af...')
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->show('1')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-07-12 15:48:35 --> Trying to access array offset on value of type null
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersModelLibrary.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/opt/lampp/htdo...', 49, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(68): App\Libraries\UsersModelLibrary->isAuthorizedUser('2', 'aa6b3a499bac5af...')
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->show('2')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
