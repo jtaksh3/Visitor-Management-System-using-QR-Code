@@ -70,7 +70,6 @@ define('_ADDRESS_LINE_3', 'address_line_3');
 define('_CITY', 'city');
 define('_STATE', 'state');
 define('_COUNTRY', 'country');
-define('_PINCODE', 'pincode');
 
 define('_SLOT', 'slot');
 define('_VISITOR_ID', 'visitor_id');
@@ -87,8 +86,11 @@ define('_ADDRESS', 'address');
 define('_LOGIN_CREDENTIALS', 'login_credentials');
 define('_AUTHORIZATION', 'Authorization');
 define('_ADMIN', 'admin');
-define('_VISITOR_STATUS', 'visitor_status');
-define('_HOST_STATUS', 'host_status');
+define('_HOST', 'host');
+define('_SLOTS', 'slots');
+define('_APPROVED', 'approved');
+define('_PENDING', 'pending');
+define('_DISAPPROVED', 'disapproved');
 
 
 define('_ACTIVE', 'active');

@@ -42,10 +42,9 @@ class UsersInputLibrary
     $city = $this->validationObj->getInput($input, _CITY);
     $state = $this->validationObj->getInput($input, _STATE);
     $country = $this->validationObj->getInput($input, _COUNTRY);
-    $pincode = $this->validationObj->getInput($input, _PINCODE);
     if (
       !$email || !$password || !$role || !$full_name || !$designation || !$organization || !$phone_no
-      || !$address_line_1 || !$city || !$state || !$country || !$pincode
+      || !$address_line_1 || !$city || !$state || !$country
     ) {
       return custom_response_process(false, null, $this->responseObj->failResponse(_MISSING_FIELDS_));
     }
@@ -66,8 +65,7 @@ class UsersInputLibrary
       _ADDRESS_LINE_3 => $address_line_3,
       _CITY => $city,
       _STATE => $state,
-      _COUNTRY => $country,
-      _PINCODE => $pincode
+      _COUNTRY => $country
     ];
     $data = [
       _USER => $user,

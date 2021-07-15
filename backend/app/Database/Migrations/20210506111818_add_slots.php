@@ -24,12 +24,7 @@ class Add_Slots extends \CodeIgniter\Database\Migration {
       'meeting_at' => [
         'type'           => 'DATETIME',
       ],
-      'visitor_status'       => [
-        'type'           => 'VARCHAR',
-        'constraint'     => '100',
-        'null'           => true,
-      ],
-      'host_status'       => [
+      'status'       => [
         'type'           => 'VARCHAR',
         'constraint'     => '100',
         'null'           => true,

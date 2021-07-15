@@ -31,6 +31,17 @@ class UsersModelLibrary
     return custom_response_process(true, null, null);
   }
 
+  public function isAuthorizedHost($token)
+  {
+    $auth = $this->authenticationTokensModelObj->getAuthenticationTokenbyToken($token);
+
+    if (empty($auth) || empty($token) || $this->getUser($auth[_USER_ID])[_ROLE] != _HOST) {
+      return custom_response_process(false, null, $this->responseObj->unauthorizedResponse(_UNAUTHORIZED_));
+    }
+
+    return custom_response_process(true, null, null);
+  }
+
   public function isUserAuthorized($token)
   {
     $auth = $this->authenticationTokensModelObj->getAuthenticationTokenbyToken($token);
@@ -85,26 +96,31 @@ class UsersModelLibrary
   public function getIndividualUser($user_id)
   {
     $user = $this->getUser($user_id);
-    if ($user)
+    if (empty($user) || empty($user_id))
     {
-      $user[_USER_ADDITIONAL_DETAILS] = $this->usersAdditionalDetailsModelLibraryObj->getUserAdditionalDetails(($user[_USER_ADDITIONAL_DETAILS_ID]));
-      $user[_USER_ADDITIONAL_DETAILS][_ADDRESS] = $this->addressModelLibraryObj->getAddress($user[_USER_ADDITIONAL_DETAILS][_ADDRESS_ID]);
-      $data = [
-        _USER => $user
-      ];
-
-      return custom_response_process(true, $data, $this->responseObj->successResponse(_USER_ID . ' ' . $user_id, $data));
+      return custom_response_process(false, null, $this->responseObj->notFoundResponse(_USER . _NOT_EXISTS_));
     }
 
-    return custom_response_process(false, null, $this->responseObj->notFoundResponse(_USER . _NOT_EXISTS_));
+    $user[_USER_ADDITIONAL_DETAILS] = $this->usersAdditionalDetailsModelLibraryObj->getUserAdditionalDetails(($user[_USER_ADDITIONAL_DETAILS_ID]));
+    $user[_USER_ADDITIONAL_DETAILS][_ADDRESS] = $this->addressModelLibraryObj->getAddress($user[_USER_ADDITIONAL_DETAILS][_ADDRESS_ID]);
+    $data = [
+      _USER => $user
+    ];
+
+    return custom_response_process(true, $data, $this->responseObj->successResponse(_USER_ID . ' ' . $user_id, $data));
   }
 
-  public function getAllUsers()
+  public function getAllUsers($role)
   {
-    $users = $this->usersModelObj->where(_STATUS, _ACTIVE)->findAll();
-    $i = 0;
-    while(!empty($users[$i]))
+    $users = $this->usersModelObj->where(_ROLE, $role)->findAll();
+    
+    if (empty($users))
     {
+      return custom_response_process(false, null, $this->responseObj->notFoundResponse(_NOT_EXISTS_));
+    }
+
+    $i = 0;
+    while (!empty($users[$i])) {
       unset($users[$i][_PASSWORD]);
       $users[$i][_USER_ADDITIONAL_DETAILS] = $this->usersAdditionalDetailsModelLibraryObj->getUserAdditionalDetails(($users[$i][_USER_ADDITIONAL_DETAILS_ID]));
       $users[$i][_USER_ADDITIONAL_DETAILS][_ADDRESS] = $this->addressModelLibraryObj->getAddress($users[$i][_USER_ADDITIONAL_DETAILS][_ADDRESS_ID]);

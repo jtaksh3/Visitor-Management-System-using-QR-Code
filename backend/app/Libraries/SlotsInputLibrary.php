@@ -42,4 +42,22 @@ class SlotsInputLibrary
         ];
         return custom_response_process(true, $data, null);
     }
+
+    public function getSlotStatusInput()
+    {
+        $input = $this->dataObj->getInputData();
+        if (
+            $this->validationObj->isInputEmpty($input, _SLOT)
+        ) {
+            return custom_response_process(false, null, $this->responseObj->failResponse(_NO_INPUTS_));
+        }
+        $input = $input[_SLOT];
+        $status = $this->validationObj->getInput($input, _STATUS);
+
+        $data = [
+            _STATUS => $status
+        ];
+
+        return custom_response_process(true, $data, null);
+    }
 }

@@ -19,6 +19,11 @@ class DataLibrary
     return $this->request->getGet();
   }
 
+  public function getQueryData()
+  {
+    return $this->request->getVar();
+  }
+
   public function getPostData()
   {
     return $this->request->getPost();

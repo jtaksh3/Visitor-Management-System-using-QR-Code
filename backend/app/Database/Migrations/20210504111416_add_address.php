@@ -41,11 +41,6 @@ class Add_Address extends \CodeIgniter\Database\Migration {
         'constraint'     => '100',
         'null'           => true,
       ],
-      'pincode' => [
-        'type'           => 'INT',
-        'constraint'     => '9',
-        'null'           => true,
-      ],
       'status'       => [
         'type'           => 'VARCHAR',
         'constraint'     => '100',
