@@ -11,6 +11,10 @@ class Slot extends \CodeIgniter\RESTful\ResourceController
 
   public function __construct()
   {
+    header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Headers: *");
+    header("Access-Control-Allow-Methods: *");
+    header("Access-Control-Max-Age: 86400");
     $this->dataObj = new \App\Libraries\DataLibrary();
     $this->slotsInputObj = new \App\Libraries\SlotsInputLibrary();
     $this->slotModelLibraryObj = new \App\Libraries\SlotsModelLibrary();

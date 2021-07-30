@@ -27,7 +27,7 @@ class Add_Additional_User_Details extends \CodeIgniter\Database\Migration {
         'null'           => true,
       ],
       'phone_no' => [
-        'type'           => 'INT',
+        'type'           => 'BIGINT',
         'constraint'     => '15',
         'null'           => true,
       ],

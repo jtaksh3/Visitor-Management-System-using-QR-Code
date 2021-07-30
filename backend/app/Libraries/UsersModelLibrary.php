@@ -28,7 +28,7 @@ class UsersModelLibrary
       return custom_response_process(false, null, $this->responseObj->unauthorizedResponse(_UNAUTHORIZED_));
     }
 
-    return custom_response_process(true, null, null);
+    return custom_response_process(true, null, $this->responseObj->successResponse(_AUTHORIZED_, null));
   }
 
   public function isAuthorizedHost($token)
@@ -39,7 +39,18 @@ class UsersModelLibrary
       return custom_response_process(false, null, $this->responseObj->unauthorizedResponse(_UNAUTHORIZED_));
     }
 
-    return custom_response_process(true, null, null);
+    return custom_response_process(true, null, $this->responseObj->successResponse(_AUTHORIZED_, null));
+  }
+
+  public function isAuthorizedVisitor($token)
+  {
+    $auth = $this->authenticationTokensModelObj->getAuthenticationTokenbyToken($token);
+
+    if (empty($auth) || empty($token) || $this->getUser($auth[_USER_ID])[_ROLE] != _VISITOR) {
+      return custom_response_process(false, null, $this->responseObj->unauthorizedResponse(_UNAUTHORIZED_));
+    }
+
+    return custom_response_process(true, null, $this->responseObj->successResponse(_AUTHORIZED_, null));
   }
 
   public function isUserAuthorized($token)
@@ -50,7 +61,7 @@ class UsersModelLibrary
       return custom_response_process(false, null, $this->responseObj->unauthorizedResponse(_UNAUTHORIZED_));
     }
 
-    return custom_response_process(true, null, null);
+    return custom_response_process(true, null, $this->responseObj->successResponse(_AUTHORIZED_, null));
   }
 
   public function isAuthorizedUser($user_id, $token)

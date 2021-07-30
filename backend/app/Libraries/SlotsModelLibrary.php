@@ -14,14 +14,21 @@ class SlotsModelLibrary
     helper('custom_response');
   }
 
-  public function getSlot($slot_id) {
+  public function getSlot($slot_id)
+  {
     return $this->slotsModelObj->find($slot_id);
   }
 
-  public function getAllSlots($status) {
-    $slots = $this->slotsModelObj->where(_STATUS, $status)->findAll();
+  public function getAllSlots($status)
+  {
 
-    if(empty($slots)) {
+    if ($status == "all") {
+      $slots = $this->slotsModelObj->findAll();
+    } else {
+      $slots = $this->slotsModelObj->where(_STATUS, $status)->findAll();
+    }
+
+    if (empty($slots)) {
       return custom_response_process(false, null, $this->responseObj->notFoundResponse(_SLOTS . _NOT_EXISTS_));
     }
 
@@ -31,26 +38,36 @@ class SlotsModelLibrary
     return custom_response_process(true, $data, $this->responseObj->successResponse(_SLOTS, $data));
   }
 
-  public function getAllHostSlots($host_id, $status) {
-    $slots = $this->slotsModelObj->where(_HOST_ID, $host_id)->where(_STATUS, $status)->findAll();
+  public function getAllHostSlots($host_id, $status)
+  {
+    if ($status == "all") {
+      $slots = $this->slotsModelObj->where(_HOST_ID, $host_id)->findAll();
+    } else {
+      $slots = $this->slotsModelObj->where(_HOST_ID, $host_id)->where(_STATUS, $status)->findAll();
+    }
 
-    if(empty($slots) || empty($host_id)) {
+    if (empty($slots) || empty($host_id)) {
       return custom_response_process(false, null, $this->responseObj->notFoundResponse(_SLOTS . _NOT_EXISTS_));
     }
-    
+
     $data = [
       _SLOTS => $slots
     ];
     return custom_response_process(true, $data, $this->responseObj->successResponse(_SLOTS, $data));
   }
 
-  public function getAllVisitorSlots($visitor_id, $status) {
-    $slots = $this->slotsModelObj->where(_VISITOR_ID, $visitor_id)->where(_STATUS, $status)->findAll();
+  public function getAllVisitorSlots($visitor_id, $status)
+  {
+    if ($status == "all") {
+      $slots = $this->slotsModelObj->where(_VISITOR_ID, $visitor_id)->findAll();
+    } else {
+      $slots = $this->slotsModelObj->where(_VISITOR_ID, $visitor_id)->where(_STATUS, $status)->findAll();
+    }
 
-    if(empty($slots) || empty($host_id)) {
+    if (empty($slots) || empty($visitor_id)) {
       return custom_response_process(false, null, $this->responseObj->notFoundResponse(_SLOTS . _NOT_EXISTS_));
     }
-    
+
     $data = [
       _SLOTS => $slots
     ];
@@ -75,7 +92,7 @@ class SlotsModelLibrary
 
     $slot = $this->getSlot($slot_id);
     $data = [
-        _SLOT => $slot,
+      _SLOT => $slot,
     ];
 
     return custom_response_process(true, $data, $this->responseObj->createdResponse(_SLOT . _CREATED_SUCCESS_, $data));
@@ -90,7 +107,7 @@ class SlotsModelLibrary
 
     $slot = $this->getSlot($slot_id);
     $data = [
-        _SLOT => $slot,
+      _SLOT => $slot,
     ];
 
     return custom_response_process(true, $data, $this->responseObj->successResponse(_SLOT . _UPDATED_SUCCESS_, $data));

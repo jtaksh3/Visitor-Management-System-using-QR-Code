@@ -87,6 +87,7 @@ define('_LOGIN_CREDENTIALS', 'login_credentials');
 define('_AUTHORIZATION', 'Authorization');
 define('_ADMIN', 'admin');
 define('_HOST', 'host');
+define('_VISITOR', 'visitor');
 define('_SLOTS', 'slots');
 define('_APPROVED', 'approved');
 define('_PENDING', 'pending');
@@ -107,6 +108,7 @@ define('_MISSING_FIELDS_', 'one or more fields are missing');
 define('_ALREADY_EXISTS_', ' already exists');
 define('_INCORRECT_CREDENTIALS_', 'invalid credentials entered');
 define('_UNAUTHORIZED_', 'unauthorized user');
+define('_AUTHORIZED_', 'authorized user');
 define('_NOT_EXISTS_', ' not exists.');
 
 
