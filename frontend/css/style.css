@@ -21365,3 +21365,34 @@ dl li {
 }
 
 /*# sourceMappingURL=maps/style.css.map */
+
+.alert {
+	padding: 10px;
+	box-sizing: border-box;
+	border: none;
+	font-size: 16px;
+	position: fixed;
+	top: 0px;
+	width: 300px;
+	height: auto;
+	color: white;
+	left: calc(50% - 150px);
+	text-align: center;
+	display: none;
+	opacity: 0;
+	font-family: "Poppins", sans-serif;
+	z-index: 10;
+}
+
+.error-alert {
+	background-color: #ffbaba;
+	color: #d8000c;
+	display: block;
+}
+
+.success-alert {
+	background-color: #dff2bf;
+	color: #270;
+	display: block;
+}
+

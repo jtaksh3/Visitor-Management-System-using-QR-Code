@@ -36,6 +36,11 @@ class Add_Additional_User_Details extends \CodeIgniter\Database\Migration {
         'constraint'     => '9',
         'null'           => true,
       ],
+      'image_location' => [
+        'type'           => 'VARCHAR',
+        'constraint'     => '100',
+        'null'           => true,
+      ],
       'status'       => [
         'type'           => 'VARCHAR',
         'constraint'     => '100',

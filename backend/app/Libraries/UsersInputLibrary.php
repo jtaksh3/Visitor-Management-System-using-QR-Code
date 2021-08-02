@@ -89,4 +89,13 @@ class UsersInputLibrary
     }
     return custom_response_process(true, [_EMAIL => $email, _PASSWORD => $password], null);
   }
+
+  public function getImageInput()
+  {
+    $image = $this->dataObj->getFile(_IMAGE);
+    if (!$image) {
+      return custom_response_process(false, null, $this->responseObj->failResponse(_MISSING_FIELDS_, null));
+    }
+    return custom_response_process(true, [_IMAGE => $image], null);
+  }
 }

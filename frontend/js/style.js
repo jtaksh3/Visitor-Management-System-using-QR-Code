@@ -79,6 +79,9 @@ $("#sign_up").click(function () {
             localStorage.clear();
         },
         success: function (response) {
+            var form_data = new FormData();
+            form_data.append("image", document.getElementById('image').files[0]);
+
             localStorage.setItem("temp_email", response.data.user.email);
             localStorage.setItem("temp_full_name", response.data.user.user_additional_details.full_name);
             localStorage.setItem("temp_designation", response.data.user.user_additional_details.designation);
@@ -91,20 +94,37 @@ $("#sign_up").click(function () {
             localStorage.setItem("temp_state", response.data.user.user_additional_details.address.state);
             localStorage.setItem("temp_city", response.data.user.user_additional_details.address.city);
             localStorage.setItem("temp_created_at", response.data.user.created_at);
+
+            $.ajax({
+                type: "POST",
+                url: "http://localhost/vms/backend/public/user/image/" + response.data.user.id,
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function (xHR) {
+                    console.log(xHR);
+                }
+            });
+
             window.location.replace("./pages/user-details.html");
         },
         error: function (xHR) {
             if (xHR.status == 409)
-                console.log(xHR.responseJSON.messages.error);
+                showError(xHR.responseJSON.messages.error);
 
             if (xHR.status == 400)
-                console.log(xHR.responseJSON.messages.message);
+                showError(xHR.responseJSON.messages.message);
 
             else
-                console.log(xHR.statusText);
+                showError(xHR.statusText);
         }
     });
 });
+
 
 $("#login").click(function () {
 
@@ -151,12 +171,65 @@ $("#login").click(function () {
         },
         error: function (xHR) {
             if (xHR.status == 409)
-                console.log(xHR.responseJSON.messages.error);
+                showError(xHR.responseJSON.messages.error);
 
             if (xHR.status == 400)
-                console.log(xHR.responseJSON.messages.message);
+                showError(xHR.responseJSON.messages.message);
             else
-                console.log(xHR.statusText);
+                showError(xHR.statusText);
         }
     });
 });
+
+function showError(msg) {
+    $(".alert")
+        .addClass("error-alert")
+        .text(msg)
+        .animate(
+            {
+                top: "60px",
+                opacity: 1
+            },
+            500
+        );
+
+    setTimeout(function () {
+        $(".alert").animate(
+            {
+                top: "0px",
+                opacity: 0
+            },
+            500,
+            function () {
+                $(".alert").removeClass("error-alert");
+            }
+        );
+    }, 5000);
+}
+
+function showSuccess(msg) {
+    $(".alert")
+        .addClass("success-alert")
+        .text(msg)
+        .animate(
+            {
+                top: "60px",
+                opacity: 1
+            },
+            500
+        );
+
+    setTimeout(function () {
+        $(".alert").animate(
+            {
+                top: "0px",
+                opacity: 0
+            },
+            500,
+            function () {
+                $(".alert").removeClass("success-alert");
+            }
+        );
+    }, 5000);
+}
+

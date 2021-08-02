@@ -189,6 +189,7 @@ function statusSlot(input1, input2) {
         headers: { "Authorization": localStorage.getItem("token") },
         success: function (response) {
             location.reload();
+            
         }
     });
 

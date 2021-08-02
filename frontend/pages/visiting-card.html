@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+
+        .title {
+            color: grey;
+            font-size: 18px;
+        }
+
+        button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        button:hover,
+        a:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 style="text-align:center">Visitor Pass</h2>
+
+    <div class="card">
+        <img id="visitor_image" style="width:100%">
+        <h1 id="visitor_name"></h1>
+        <p class="title" id="visitor_designation"></p>
+        <p id="visitor_organization"></p>
+        <div style="margin: 24px 0;">
+            <p id="host_name"></p>
+            <p class="title" id="host_designation"></p>
+        </div>
+        <p><button id="phone_no"></button></p>
+
+    </div>
+
+    <script src="../vendors/base/vendor.bundle.base.js"></script>
+    <script>
+        (function ($) {
+            const urlParams = new URLSearchParams(location.search);
+            var token = urlParams.get('token');
+            var visitor_id = urlParams.get('visitor_id');
+            var host_id = urlParams.get('host_id');
+
+            $.ajax({
+                type: "GET",
+                url: "http://localhost/vms/backend/public/user/" + visitor_id,
+                dataType: "json",
+                headers: { "Authorization": token },
+                success: function (response) {
+                    document.getElementById("visitor_image").src = "/vms/backend/public/" + response.data.user.user_additional_details.image_location;
+                    document.getElementById("visitor_name").textContent = response.data.user.user_additional_details.full_name;
+                    document.getElementById("visitor_designation").textContent = response.data.user.user_additional_details.designation;
+                    document.getElementById("visitor_organization").textContent = response.data.user.user_additional_details.organization;
+                    document.getElementById("phone_no").textContent = response.data.user.user_additional_details.phone_no;
+                }
+            });
+
+            $.ajax({
+                type: "GET",
+                url: "http://localhost/vms/backend/public/user/" + host_id,
+                dataType: "json",
+                headers: { "Authorization": token },
+                success: function (response) {
+                    document.getElementById("host_name").textContent = "Host : " + response.data.user.user_additional_details.full_name;
+                    document.getElementById("host_designation").textContent = response.data.user.user_additional_details.designation;
+                }
+            });
+
+        })(jQuery);
+    </script>
+
+</body>
+
+</html>

@@ -107,8 +107,7 @@ class UsersModelLibrary
   public function getIndividualUser($user_id)
   {
     $user = $this->getUser($user_id);
-    if (empty($user) || empty($user_id))
-    {
+    if (empty($user) || empty($user_id)) {
       return custom_response_process(false, null, $this->responseObj->notFoundResponse(_USER . _NOT_EXISTS_));
     }
 
@@ -124,9 +123,8 @@ class UsersModelLibrary
   public function getAllUsers($role)
   {
     $users = $this->usersModelObj->where(_ROLE, $role)->findAll();
-    
-    if (empty($users))
-    {
+
+    if (empty($users)) {
       return custom_response_process(false, null, $this->responseObj->notFoundResponse(_NOT_EXISTS_));
     }
 

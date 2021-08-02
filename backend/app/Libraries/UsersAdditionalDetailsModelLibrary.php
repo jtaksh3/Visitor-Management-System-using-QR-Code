@@ -25,4 +25,19 @@ class UsersAdditionalDetailsModelLibrary
 
     return $this->usersAdditionalDetailsModelObj->insert($insert);
   }
+
+  public function updationUser($image, $user_id)
+  {
+    $image_name = $image->getRandomName();
+    $image_file = imagecreatefromjpeg($image);
+    $image_location = _FILE_DESTINATION . $image_name;
+    imagejpeg($image_file, $image_location, 75);
+
+    $update = [
+      _IMAGE_LOCATION => $image_location
+    ];
+    $this->usersAdditionalDetailsModelObj->update($user_id, $update);
+
+    return custom_response_process(true, null, $this->responseObj->successResponse(_USER_ADDITIONAL_DETAILS . _UPDATED_SUCCESS_, null));
+  }
 }

@@ -63,6 +63,7 @@ define('_DESIGNATION', 'designation');
 define('_ORGANIZATION', 'organization');
 define('_PHONE_NO', 'phone_no');
 define('_ADDRESS_ID', 'address_id');
+define('_IMAGE_LOCATION', 'image_location');
 
 define('_ADDRESS_LINE_1', 'address_line_1');
 define('_ADDRESS_LINE_2', 'address_line_2');
@@ -92,6 +93,8 @@ define('_SLOTS', 'slots');
 define('_APPROVED', 'approved');
 define('_PENDING', 'pending');
 define('_DISAPPROVED', 'disapproved');
+define('_IMAGE', 'image');
+define('_FILE_DESTINATION', 'uploads/');
 
 
 define('_ACTIVE', 'active');

@@ -1,0 +1,21 @@
+CRITICAL - 2021-08-01 09:59:40 --> Undefined index: id
+#0 /opt/lampp/htdocs/vms/backend/app/Controllers/Slot.php(80): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 80, Array)
+#1 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\Slot->index()
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Slot))
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-08-01 09:59:40 --> Undefined index: id
+#0 /opt/lampp/htdocs/vms/backend/app/Controllers/Slot.php(80): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 80, Array)
+#1 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\Slot->index()
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Slot))
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-08-01 09:59:40 --> Undefined index: id
+#0 /opt/lampp/htdocs/vms/backend/app/Controllers/Slot.php(80): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 80, Array)
+#1 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\Slot->index()
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Slot))
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#5 {main}

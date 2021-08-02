@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->post('user/login', 'User::login');
+$routes->post('user/image/(:num)', 'User::image/$1');
 $routes->get('user/isAuthorizedAdmin', 'User::isAuthorizedAdmin');
 $routes->get('user/isAuthorizedHost', 'User::isAuthorizedHost');
 $routes->get('user/isAuthorizedVisitor', 'User::isAuthorizedVisitor');

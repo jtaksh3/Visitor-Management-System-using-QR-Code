@@ -1,0 +1,129 @@
+CRITICAL - 2021-08-02 17:06:25 --> Trying to access array offset on value of type null
+#0 /opt/lampp/htdocs/vms/backend/app/Libraries/DataLibrary.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/opt/lampp/htdo...', 49, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(123): App\Libraries\DataLibrary->getData(Array, 'id')
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->update('1')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-08-02 17:08:04 --> Undefined property: App\Controllers\User::$validationObj
+#0 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(123): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 123, Array)
+#1 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->update('1')
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-08-02 17:10:52 --> Call to a member function getRandomName() on string
+#0 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(129): App\Libraries\UsersAdditionalDetailsModelLibrary->updationUser(NULL, '1')
+#1 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->update('1')
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-08-02 17:36:32 --> Call to a member function getRandomName() on string
+#0 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(129): App\Libraries\UsersAdditionalDetailsModelLibrary->updationUser(Object(CodeIgniter\HTTP\Files\UploadedFile), '1')
+#1 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->image('1')
+#2 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-08-02 18:03:56 --> imagejpeg(/vms/backend/public/uploads/1627907635_210d537ec61f4e7b340a.jpeg): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagejpeg(/vms/...', '/opt/lampp/htdo...', 34, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersAdditionalDetailsModelLibrary.php(34): imagejpeg(Resource id #143, '/vms/backend/pu...', 75)
+#2 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(129): App\Libraries\UsersAdditionalDetailsModelLibrary->updationUser(Object(CodeIgniter\HTTP\Files\UploadedFile), '1')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->image('1')
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#5 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-08-02 18:03:56 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in /opt/lampp/htdocs/vms/backend/system/Format/JSONFormatter.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/vms/backend/system/Format/JSONFormatter.php(42): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 /opt/lampp/htdocs/vms/backend/system/API/ResponseTrait.php(407): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 /opt/lampp/htdocs/vms/backend/system/API/ResponseTrait.php(114): CodeIgniter\Debug\Exceptions->format(Array)
+#3 /opt/lampp/htdocs/vms/backend/system/Debug/Exceptions.php(141): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-08-02 18:04:39 --> imagejpeg(/vms/backend/public/uploads/1627907679_a4e9a8c9ce8739abdfeb.jpeg): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagejpeg(/vms/...', '/opt/lampp/htdo...', 34, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersAdditionalDetailsModelLibrary.php(34): imagejpeg(Resource id #143, '/vms/backend/pu...', 75)
+#2 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(129): App\Libraries\UsersAdditionalDetailsModelLibrary->updationUser(Object(CodeIgniter\HTTP\Files\UploadedFile), '1')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->image('1')
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#5 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-08-02 18:04:39 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in /opt/lampp/htdocs/vms/backend/system/Format/JSONFormatter.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/vms/backend/system/Format/JSONFormatter.php(42): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 /opt/lampp/htdocs/vms/backend/system/API/ResponseTrait.php(407): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 /opt/lampp/htdocs/vms/backend/system/API/ResponseTrait.php(114): CodeIgniter\Debug\Exceptions->format(Array)
+#3 /opt/lampp/htdocs/vms/backend/system/Debug/Exceptions.php(141): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-08-02 18:06:10 --> imagejpeg(/vms/backend/public/uploads/1627907770_47a6be45a0704ad493cc.jpeg): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagejpeg(/vms/...', '/opt/lampp/htdo...', 34, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersAdditionalDetailsModelLibrary.php(34): imagejpeg(Resource id #143, '/vms/backend/pu...', 75)
+#2 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(129): App\Libraries\UsersAdditionalDetailsModelLibrary->updationUser(Object(CodeIgniter\HTTP\Files\UploadedFile), '1')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->image('1')
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#5 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-08-02 18:06:10 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in /opt/lampp/htdocs/vms/backend/system/Format/JSONFormatter.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/vms/backend/system/Format/JSONFormatter.php(42): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 /opt/lampp/htdocs/vms/backend/system/API/ResponseTrait.php(407): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 /opt/lampp/htdocs/vms/backend/system/API/ResponseTrait.php(114): CodeIgniter\Debug\Exceptions->format(Array)
+#3 /opt/lampp/htdocs/vms/backend/system/Debug/Exceptions.php(141): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-08-02 18:06:28 --> imagejpeg(vms/backend/public/uploads/1627907788_7216b502e4a1c0d5aea5.jpeg): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagejpeg(vms/b...', '/opt/lampp/htdo...', 34, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersAdditionalDetailsModelLibrary.php(34): imagejpeg(Resource id #143, 'vms/backend/pub...', 75)
+#2 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(129): App\Libraries\UsersAdditionalDetailsModelLibrary->updationUser(Object(CodeIgniter\HTTP\Files\UploadedFile), '1')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->image('1')
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#5 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-08-02 18:06:28 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in /opt/lampp/htdocs/vms/backend/system/Format/JSONFormatter.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/vms/backend/system/Format/JSONFormatter.php(42): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 /opt/lampp/htdocs/vms/backend/system/API/ResponseTrait.php(407): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 /opt/lampp/htdocs/vms/backend/system/API/ResponseTrait.php(114): CodeIgniter\Debug\Exceptions->format(Array)
+#3 /opt/lampp/htdocs/vms/backend/system/Debug/Exceptions.php(141): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-08-02 18:07:17 --> imagejpeg(backend/uploads/1627907837_fc0c192c8fdc160707f1.jpeg): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagejpeg(backe...', '/opt/lampp/htdo...', 34, Array)
+#1 /opt/lampp/htdocs/vms/backend/app/Libraries/UsersAdditionalDetailsModelLibrary.php(34): imagejpeg(Resource id #143, 'backend/uploads...', 75)
+#2 /opt/lampp/htdocs/vms/backend/app/Controllers/User.php(129): App\Libraries\UsersAdditionalDetailsModelLibrary->updationUser(Object(CodeIgniter\HTTP\Files\UploadedFile), '1')
+#3 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(936): App\Controllers\User->image('1')
+#4 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#5 /opt/lampp/htdocs/vms/backend/system/CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/vms/backend/public/index.php(44): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-08-02 18:07:17 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in /opt/lampp/htdocs/vms/backend/system/Format/JSONFormatter.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/vms/backend/system/Format/JSONFormatter.php(42): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 /opt/lampp/htdocs/vms/backend/system/API/ResponseTrait.php(407): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 /opt/lampp/htdocs/vms/backend/system/API/ResponseTrait.php(114): CodeIgniter\Debug\Exceptions->format(Array)
+#3 /opt/lampp/htdocs/vms/backend/system/Debug/Exceptions.php(141): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}

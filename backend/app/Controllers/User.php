@@ -111,4 +111,17 @@ class User extends \CodeIgniter\RESTful\ResourceController
 
     return $this->dataObj->getResponse($get);
   }
+
+  public function image($user_id = null)
+  {
+    $get = $this->usersInputObj->getImageInput();
+    if(!$this->dataObj->getStatus($get))
+    {
+      return $this->dataObj->getResponse($get);
+    }
+    $image = $this->dataObj->getData($get, _IMAGE);
+    $get = $this->usersAdditionalDetailsModelLibraryObj->updationUser($image, $user_id);
+
+    return $this->dataObj->getResponse($get);
+  }
 }
